@@ -28,30 +28,30 @@ namespace Container {
          * The order starts at the middle element, then alternates left and right.
          */
         void build_middleOut_order() {
-            const size_t s = container.size();
-            middleOut_indices.clear();
-            if (s == 0) return;
+        const size_t s = container.size();  
+        middleOut_indices.clear();          
+        if (s == 0) return;                  // No elements → no order to build
 
-            const size_t mid = s / 2;  // round down if even
+        const size_t mid = s / 2;            // Calculate the middle index (round down if even)
 
-            middleOut_indices.push_back(mid);
+        middleOut_indices.push_back(mid);    // Start from the middle element
 
-            int left = static_cast<int>(mid) - 1;
-            size_t right = mid + 1;
-            bool nextIsLeft = true;
+        int left = static_cast<int>(mid) - 1; // Pointer to the element just left of the middle
+        size_t right = mid + 1;               // Pointer to the element just right of the middle
+        bool nextIsLeft = true;               // Flag to alternate between left and right
 
-            while (middleOut_indices.size() < s) {
-                if (nextIsLeft && left >= 0) {
-                    middleOut_indices.push_back(static_cast<size_t>(left));
-                    --left;
-                } else if (!nextIsLeft && right < s) {
-                    middleOut_indices.push_back(right);
-                    ++right;
-                }
-                nextIsLeft = !nextIsLeft;
-            }
-
+        // Continue until we have added all elements in the middle-out order
+        while (middleOut_indices.size() < s) {
+            if (nextIsLeft && left >= 0) {            // If it's left's turn and still within bounds
+            middleOut_indices.push_back(static_cast<size_t>(left));
+            --left;                               // Move further left
+        } else if (!nextIsLeft && right < s) {    // If it's right's turn and still within bounds
+            middleOut_indices.push_back(right);
+            ++right;                              // Move further right
         }
+        nextIsLeft = !nextIsLeft;                 // Alternate sides
+    }
+}
 
     public:
         /**
