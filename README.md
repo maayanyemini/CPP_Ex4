@@ -63,4 +63,5 @@ Run any of the following from the terminal:
 
 ## 👩‍💻 Author
 
-**Maayan Cohen Yemini**
+**Maayan Cohen Yemini** 
+**Email: maayanyemini123@gmail.com** 
