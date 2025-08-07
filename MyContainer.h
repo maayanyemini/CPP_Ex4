@@ -38,7 +38,7 @@ namespace Container {
         size_t size() const {
              return elements.size(); 
             }
-
+        //Warning!- Do not add/remove elements while iterating, as it may invalidate iterators.
         // Iterator methods to access different orders of elements 
         // we send the current container mycontainer to the iterator
         // size()/0 is the starting index for the iterator
