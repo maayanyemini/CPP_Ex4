@@ -1,85 +1,66 @@
-
-# 📦 MyContainer Project
-
----
-
-### 📘 Project Description
-
-This project implements a generic container class named `MyContainer`, along with several advanced iterators that traverse the container’s elements in unique orders:
-
-- **AscendingIterator** – iterates in ascending (sorted) order.
-- **DescendingIterator** – iterates in descending (reverse sorted) order.
-- **SideCrossIterator** – alternates between the smallest and largest elements.
-- **ReverseIterator** – iterates in reverse insertion order.
-- **OrderIterator** – iterates in original insertion order.
-- **MiddleOutIterator** – starts from the middle and alternates outward.
-
-The project includes comprehensive unit tests for all functionalities, proper exception handling for invalid operations, and memory leak detection using valgrind.
+# 📦 MyContainer – Custom C++ Container with Unique Iterators
 
 ---
 
-### 🗂️ Project Structure
+## 🧾 About the Project
 
-```
+`MyContainer` is a generic container class written in C++, featuring a collection of specialized iterators that allow for unique and non-traditional traversal methods. The project demonstrates modern C++ techniques including custom iteration logic, exception safety, and memory management with leak checks.
+
+---
+
+## 🔁 Available Iterators
+
+- 🔼 **AscendingIterator** – Iterates over the container in ascending order.
+- 🔽 **DescendingIterator** – Iterates in descending order.
+- 🔀 **SideCrossIterator** – Alternates between smallest and largest values.
+- ↩️ **ReverseIterator** – Traverses in reverse of insertion order.
+- 🔁 **OrderIterator** – Follows the exact insertion order.
+- 🎯 **MiddleOutIterator** – Starts from the middle and moves outward alternately.
+
+---
+
+## 🗂️ Folder Structure
 .
-├── Iterator/                    # Folder containing all iterator classes
-│   ├── AscendingOrder.h
-│   ├── DescendingOrder.h
-│   ├── SideCrossOrder.h
-│   ├── ReverseOrder.h
-│   ├── Order.h
-│   └── MiddleOutOrder.h
+├── Iterator/ # All iterator class headers
+│ ├── AscendingOrder.h
+│ ├── DescendingOrder.h
+│ ├── SideCrossOrder.h
+│ ├── ReverseOrder.h
+│ ├── Order.h
+│ └── MiddleOutOrder.h
 │
-├── MyContainer.h               # Main generic container header
-├── Main.cpp                    # Demo and usage example main file
-├── Test.cpp                    # Unit tests (doctest framework)
-├── Makefile                    # Compilation, testing, valgrind, cleanup
-└── README.md                   # This documentation file
-```
+├── MyContainer.h # Main container class
+├── Main.cpp # Demo usage
+├── Test.cpp # Unit tests (based on doctest)
+├── Makefile # Build, test, valgrind, and clean commands
+└── README.md # This file
 
 ---
 
-### Makefile Commands:
+## 🛠️ Build & Run Commands
 
-| Command         | Description                                   |
-| --------------- | ---------------------------------------------|
-| `make Main`     | Builds and runs the demonstration executable (`Main.cpp`) |
-| `make test`     | Builds and runs the unit tests (`Test.cpp`) using doctest |
-| `make valgrind` | Runs memory leak checks on the demo executable with `valgrind` |
-| `make clean`    | Removes all compiled binaries and temporary files |
+Run any of the following from the terminal:
 
----
-
-### 🛠️ Usage Examples
-
-```bash
-# Build and run the demo
-make Main
-
-# Build and run all unit tests
-make test
-
-# Run memory leak detection using valgrind
-make valgrind
-
-# Clean build artifacts and executables
-make clean
-```
+| Command         | Description                                        |
+|----------------|----------------------------------------------------|
+| `make Main`     | Builds and runs the main demo (`Main.cpp`)         |
+| `make test`     | Compiles and runs the unit tests (`Test.cpp`)      |
+| `make valgrind` | Runs memory leak detection using `valgrind`        |
+| `make clean`    | Cleans up all compiled files and executables       |
 
 ---
 
-### ✅ What is Tested?
+## ✅ What's Covered in the Tests?
 
-- Creating containers with default and custom template types (e.g., `int`, `std::string`).
-- Adding and removing elements, including exception throwing when removing non-existent elements.
-- Iterator traversals verifying element order for each iterator type.
-- Exception throwing when incrementing iterators past the end (overflow).
-- Behavior of all iterators on empty containers.
+- Template usage with types like `int`, `std::string`, etc.
+- Adding and removing elements, with error handling for invalid operations.
+- All iterators are tested for git add .correctness and edge-case behavior.
+- Exceptions for advancing past the end of iterators.
+- Empty container behavior with all iterators.
+- Memory leaks detection with `valgrind`.
 
 ---
 
-### 👩‍💻 Author
+## 👩‍💻 Author
 
-**Eden Hassin**  
-📧 Edenhassin@gmail.com  
-🗓️ Project completed: May–June 2025
+**Maayan Cohen Yemini**
